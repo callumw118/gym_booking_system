@@ -21,6 +21,4 @@ activity_repository.save(activity_1)
 activity_2 = Activity("Indoor Cycling", "Monday", "15:00")
 activity_repository.save(activity_2)
 
-print(activity_repository.select(activity_2.id))
-
 pdb.set_trace()

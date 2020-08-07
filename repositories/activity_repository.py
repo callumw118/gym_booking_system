@@ -31,3 +31,9 @@ def select(id):
     result = run_sql(sql, values)[0]
     activity = Activity(result['name'], result['day_of_week'], result['time'], result['id'])
     return activity
+
+
+def update(activity):
+    sql = "UPDATE activities SET (name, day_of_week, time) = (%s, %s, %s) WHERE id = %s"
+    values = [activity.name, activity.day_of_week, activity.time, activity.id]
+    run_sql(sql, values)
