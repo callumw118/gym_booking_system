@@ -28,6 +28,4 @@ activity_repository.save(activity_2)
 booking_1 = Booking(member_1, activity_1)
 booking_repository.save(booking_1)
 
-print(booking_repository.select(booking_1.id))
-
 pdb.set_trace()
