@@ -7,7 +7,7 @@ def save(activity):
     results = run_sql(sql, values)
     id = results[0]['id']
     activity.id = id
-    
+
 
 def delete_all():
     sql = "DELETE FROM activities"
@@ -23,3 +23,11 @@ def select_all():
         activity = Activity(result['name'], result['day_of_week'], result['time'], result['id'])
         activities.append(activity)
     return activities
+
+
+def select(id):
+    sql = "SELECT * FROM activities WHERE id=%s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    activity = Activity(result['name'], result['day_of_week'], result['time'], result['id'])
+    return activity
