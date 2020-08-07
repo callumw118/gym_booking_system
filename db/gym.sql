@@ -10,5 +10,6 @@ CREATE TABLE members (
 CREATE TABLE activities (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
+    day_of_week VARCHAR(255),
     time VARCHAR(255)
 );

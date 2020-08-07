@@ -16,7 +16,7 @@ class TestBooking(unittest.TestCase):
     def test_booking_has_activity(self):
         self.assertEqual("HIIT (High Intensity Training)", self.booking.activity.name)
 
-    def test_booking_has_day_of_weel(self):
+    def test_booking_has_day_of_week(self):
         self.assertEqual("Monday", self.booking.activity.day_of_week)
 
     def test_booking_has_time(self):
