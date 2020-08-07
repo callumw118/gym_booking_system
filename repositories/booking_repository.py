@@ -18,3 +18,14 @@ def save(booking):
 def delete_all():
     sql = "DELETE FROM bookings"
     run_sql(sql)
+
+
+def select(id):
+    sql = "SELECT * FROM bookings where id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    member = member_repository.select(result['member_id'])
+    activity = activity_repository.select(result['activity_id'])
+    booking = Booking(member, activity, result['id'])
+    return booking

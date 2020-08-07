@@ -9,9 +9,9 @@ import repositories.activity_repository as activity_repository
 from models.booking import Booking
 import repositories.booking_repository as booking_repository
 
+booking_repository.delete_all()
 member_repository.delete_all()
 activity_repository.delete_all()
-booking_repository.delete_all()
 
 member_1 = Member("Callum Wolfe")
 member_repository.save(member_1)
@@ -27,5 +27,7 @@ activity_repository.save(activity_2)
 
 booking_1 = Booking(member_1, activity_1)
 booking_repository.save(booking_1)
+
+print(booking_repository.select(booking_1.id))
 
 pdb.set_trace()
