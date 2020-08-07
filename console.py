@@ -6,6 +6,9 @@ import repositories.member_repository as member_repository
 from models.activity import Activity
 import repositories.activity_repository as activity_repository
 
+from models.booking import Booking
+import repositories.booking_repository as booking_repository
+
 member_repository.delete_all()
 activity_repository.delete_all()
 
@@ -20,5 +23,7 @@ activity_repository.save(activity_1)
 
 activity_2 = Activity("Indoor Cycling", "Monday", "15:00")
 activity_repository.save(activity_2)
+
+booking_1 = Booking(member_1, activity_1)
 
 pdb.set_trace()
