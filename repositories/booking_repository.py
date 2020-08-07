@@ -13,3 +13,8 @@ def save(booking):
     results = run_sql(sql, values)
     id = results[0]['id']
     booking.id = id
+
+
+def delete_all():
+    sql = "DELETE FROM bookings"
+    run_sql(sql)

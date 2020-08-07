@@ -11,6 +11,7 @@ import repositories.booking_repository as booking_repository
 
 member_repository.delete_all()
 activity_repository.delete_all()
+booking_repository.delete_all()
 
 member_1 = Member("Callum Wolfe")
 member_repository.save(member_1)
@@ -25,5 +26,6 @@ activity_2 = Activity("Indoor Cycling", "Monday", "15:00")
 activity_repository.save(activity_2)
 
 booking_1 = Booking(member_1, activity_1)
+booking_repository.save(booking_1)
 
 pdb.set_trace()
