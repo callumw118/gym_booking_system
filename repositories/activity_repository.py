@@ -7,3 +7,7 @@ def save(activity):
     results = run_sql(sql, values)
     id = results[0]['id']
     activity.id = id
+
+def delete_all():
+    sql = "DELETE FROM activities"
+    run_sql(sql)
