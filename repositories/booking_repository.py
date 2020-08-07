@@ -30,6 +30,7 @@ def select(id):
     booking = Booking(member, activity, result['id'])
     return booking
 
+
 def select_all():
     bookings = []
     sql = "SELECT * FROM bookings"
