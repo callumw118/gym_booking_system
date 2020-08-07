@@ -13,3 +13,9 @@ CREATE TABLE activities (
     day_of_week VARCHAR(255),
     time VARCHAR(255)
 );
+
+CREATE TABLE bookings (
+    id SERIAL PRIMARY KEY,
+    member_id SERIAL REFERENCES members(id),
+    activity_id SERIAL REFERENCES activities(id)
+);
