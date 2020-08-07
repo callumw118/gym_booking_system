@@ -3,7 +3,7 @@ from models.member import Member
 from models.activity import Activity
 from models.booking import Booking
 
-class TestBook(unittest.TestCase):
+class TestBooking(unittest.TestCase):
 
     def setUp(self):
         self.member = Member("Callum Wolfe")
@@ -11,4 +11,4 @@ class TestBook(unittest.TestCase):
         self.booking = Booking(self.member, self.activity)
 
     def test_booking_has_member(self):
-        self.assertEqual("Callum Wolfe", self.booking.member)
+        self.assertEqual("Callum Wolfe", self.booking.member.full_name)
