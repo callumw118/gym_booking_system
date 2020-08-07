@@ -1,4 +1,4 @@
-class Visit:
+class Book:
     def __init__(self, member, activity, id=None):
         self.member = member
         self.activity = activity
