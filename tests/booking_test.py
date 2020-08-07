@@ -15,3 +15,6 @@ class TestBooking(unittest.TestCase):
 
     def test_booking_has_activity(self):
         self.assertEqual("HIIT (High Intensity Training)", self.booking.activity.name)
+
+    def test_booking_has_time(self):
+        self.assertEqual("13:00", self.booking.activity.time)
