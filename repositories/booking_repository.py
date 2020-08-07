@@ -29,3 +29,15 @@ def select(id):
     activity = activity_repository.select(result['activity_id'])
     booking = Booking(member, activity, result['id'])
     return booking
+
+def select_all():
+    bookings = []
+    sql = "SELECT * FROM bookings"
+    results = run_sql(sql)
+
+    for row in results:
+        member = member_repository.select(row['member_id'])
+        activity = activity_repository.select(row['activity_id'])
+        booking = Booking(member, activity, row['id'])
+        bookings.append(booking)
+    return bookings
