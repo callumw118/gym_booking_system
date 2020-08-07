@@ -9,3 +9,6 @@ class TestBook(unittest.TestCase):
         self.member = Member("Callum Wolfe")
         self.activity = Activity("HIIT (High Intensity Training)", "13:00")
         self.booking = Booking(self.member, self.activity)
+
+    def test_booking_has_member(self):
+        self.assertEqual("Callum Wolfe", self.booking.member)
