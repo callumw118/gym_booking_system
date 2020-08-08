@@ -28,10 +28,10 @@ def create_activity():
     new_activity = Activity(name, day_of_week, time)
     activity_repository.save(new_activity)
     return redirect("/activities")
-    
+
 
 # EDIT
 @activities_blueprint.route("/activities/<id>/edit")
 def edit_activity(id):
-    activity = activity_repository.select_all(id)
+    activity = activity_repository.select(id)
     return render_template("/activities/edit.html", activity=activity)
