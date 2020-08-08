@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Members</h1>
+
+{% for member in members %}
+
+<section>
+  <h3>{{ member.full_name }}</h3>
+</section>
+
+{% endfor %}
+{% endblock %}
