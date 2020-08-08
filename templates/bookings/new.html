@@ -2,6 +2,17 @@
 {% block content %}
 
 <h2>Book Member on Class</h2>
+<h3>What's on?</h3>
+
+{% for activity in activities %}
+
+<section>
+  <h3>{{ activity.name }}</h3>
+  <h4>Currently runs on a {{ activity.day_of_week }}</h4>
+  <h5>Times: {{ activity.time }}</h5>
+</section>
+
+{% endfor %}
 
 <form action="/bookings" method="POST">
   <section>
@@ -27,6 +38,19 @@
       {% endfor %}
     </select>
   </section>
+
+  <section>
+    <label for="day_of_week">Day of Week:</label>
+    <select name="activity_id">
+      <option value="" selected disabled hidden>Select Day</option>
+      {% for activity in activities %}
+        <option value="{{ activity.id }}">
+          {{ activity.day_of_week }}
+        </option>
+      {% endfor %}
+    </select>
+  </section>
+
 </form>
 
 {% endblock %}
