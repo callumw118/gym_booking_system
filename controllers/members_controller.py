@@ -32,3 +32,12 @@ def create_member():
 def edit_member(id):
     member = member_repository.select(id)
     return render_template("members/edit.html", member=member)
+
+
+# UPDATE
+@members_blueprint.route("/members/<id>", methods=["POST"])
+def update_member(id):
+    full_name = request.form["full_name"]
+    member = Member(full_name, id)
+    member_repository.update(member)
+    return redirect("/members")
