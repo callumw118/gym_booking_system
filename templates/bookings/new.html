@@ -7,9 +7,22 @@
   <section>
     <label for="member">Member:</label>
     <select name="member_id">
+      <option value="" selected disabled hidden>Choose Member</option>
       {% for member in members %}
-        <option value="{{ member.id }}">
-          {{ member.full_name }}
+        <option value="{{  member.id  }}">
+          {{  member.full_name  }}
+        </option>
+      {% endfor %}
+    </select>
+  </section>
+
+  <section>
+    <label for="activity">Activity:</label>
+    <select name="activity_id">
+      <option value="" selected disabled hidden>Choose Activity</option>
+      {% for activity in activities %}
+        <option value="{{  activity.id  }}">
+          {{  activity.name  }}
         </option>
       {% endfor %}
     </select>
