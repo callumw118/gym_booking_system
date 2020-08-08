@@ -17,3 +17,14 @@ def activities():
 @activities_blueprint.route("/activities/new")
 def new_activity():
     return render_template("activities/new.html")
+
+
+# CREATE
+@activities_blueprint.route("/activities", methods=["POST"])
+def create_activity():
+    name = request.form["name"]
+    day_of_week = request.form["day_of_week"]
+    time = request.form["time"]
+    new_activity = Activity(name, day_of_week, time)
+    activity_repository.save(new_activity)
+    return redirect("/activities")
