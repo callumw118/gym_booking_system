@@ -7,6 +7,13 @@ from models.booking import Booking
 bookings_blueprint = Blueprint("bookings", __name__)
 
 
+# INDEX
+@bookings_blueprint.route("/bookings")
+def index():
+    bookings = booking_repository.select_all()
+    return render_template("/bookings/index.html", bookings=bookings)
+    
+
 # NEW
 @bookings_blueprint.route("/bookings/new")
 def new():
