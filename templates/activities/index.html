@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Classes</h1>
+<a href="/">Home</a>
+
+{% for activity in activities %}
+
+<section>
+  <h3>{{ activity.name }}</h3>
+  <h4>Currently runs on a {{ activity.day_of_week }}</h4>
+  <h5>Times: {{ activity.time }}</h5>
+  
+  <a href="/activities/ {{ activity.id }}/edit">Edit Class</a>
+</section>
+
+{% endfor %}
+{% endblock %}
