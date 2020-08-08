@@ -6,3 +6,10 @@ from models.booking import Booking
 
 booking_blueprint = Blueprint("bookings", __name__)
 
+
+# NEW
+@booking_blueprint.route("/bookings/new")
+def new():
+    members = member_repository.select_all()
+    activities = activity_repository.select_all()
+    return render_template("/bookings/new.html", members=members, activities=activities)
