@@ -25,9 +25,7 @@
         </option>
       {% endfor %}
     </select>
-  </section>
 
-  <section>
     <label for="activity">Activity:</label>
     <select name="activity_id">
       <option value="" selected disabled hidden>Choose Activity</option>
@@ -37,9 +35,7 @@
         </option>
       {% endfor %}
     </select>
-  </section>
 
-  <section>
     <label for="day_of_week">Day of Week:</label>
     <select name="activity_id">
       <option value="" selected disabled hidden>Select Day</option>
@@ -49,6 +45,17 @@
         </option>
       {% endfor %}
     </select>
+
+    <label for="time">Time:</label>
+    <select name="activity_id">
+      <option value="" selected disabled hidden>Select Time</option>
+      {% for activity in activities %}
+        <option value="{{ activity.id }}">
+          {{ activity.time }}
+        </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Add">
   </section>
 
 </form>
