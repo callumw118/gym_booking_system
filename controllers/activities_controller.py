@@ -35,3 +35,14 @@ def create_activity():
 def edit_activity(id):
     activity = activity_repository.select(id)
     return render_template("/activities/edit.html", activity=activity)
+
+
+# UPDATE
+@activities_blueprint.route("/activities/<id>", methods=["POST"])
+def update_activity(id):
+    name = request.form["name"]
+    day_of_week = request.form["day_of_week"]
+    time = request.form["time"]
+    new_activity = Activity(name, day_of_week, time, id)
+    activity_repository.update(new_activity)
+    return redirect("/activities")
