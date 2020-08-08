@@ -12,3 +12,7 @@ def members():
     return render_template("members/index.html", members=members)
 
 
+# NEW 
+@members_blueprint.route("/members/new")
+def new_member():
+    return render_template("members/new.html")
