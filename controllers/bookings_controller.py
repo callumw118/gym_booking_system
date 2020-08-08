@@ -4,12 +4,26 @@ import repositories.member_repository as member_repository
 import repositories.activity_repository as activity_repository
 from models.booking import Booking
 
-booking_blueprint = Blueprint("bookings", __name__)
+bookings_blueprint = Blueprint("bookings", __name__)
 
 
 # NEW
-@booking_blueprint.route("/bookings/new")
+@bookings_blueprint.route("/bookings/new")
 def new():
     members = member_repository.select_all()
     activities = activity_repository.select_all()
     return render_template("/bookings/new.html", members=members, activities=activities)
+
+
+# CREATE
+@bookings_blueprint.route("/bookings", methods=["POST"])
+def create_booking():
+    member_id = request.form['member_id']
+    activity_id = request.form['activity_id']
+
+    member = member_repository.select(member_id)
+    activity = activity_repository.select(activity_id)
+
+    booking = Booking(member, activity)
+    booking_repository.save(booking)
+    return redirect("/activities")
