@@ -11,3 +11,9 @@ activities_blueprint = Blueprint("activities", __name__)
 def activities():
     activities = activity_repository.select_all()
     return render_template("/activities/index.html", activities=activities)
+
+
+# NEW
+@activities_blueprint.route("/activities/new")
+def new_activity():
+    return render_template("activities/new.html")
