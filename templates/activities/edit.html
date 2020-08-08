@@ -6,8 +6,26 @@
 
 <form action="/activities/{{ activity.id }}" method="POST">
   <section>
-    <label for="name">New Class Name:</label>
+    <label for="name">Edit Class Name:</label>
     <input type="text" name="name">
+
+    <label for="day_of_week">Day of the Week:</label>
+    <select name="day_of_week">
+      <option value="" selected disabled hidden>Choose Day</option>
+      <option value="Monday">Monday</option>
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option>
+      <option value="Saturday">Saturday</option>
+      <option value="Sunday">Sunday</option>
+    </select>
+
+    <label for="time">Change Time: </label>
+    <input type="time" name="time" value="{{  activity.time  }}">
+
+    <input type="submit" value="Update">
+
   </section>
 </form>
 
