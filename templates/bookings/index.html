@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>All Bookings</h2>
+<a href="/">Home</a>
+
+{% for activity in activities %}
+
+<!-- Displays members booked on particular course -->
+<section>
+  <h3>{{ activity.name }}</h3>
+  <p>On {{ activity.day_of_week  }} at {{ activity.time }} </p>
+  <h5>Members booked on this class</h5>
+  {% for booking in bookings %}
+  <ul>
+    {% if activity.name == booking.activity.name %}
+    <li>{{ booking.member.full_name }}</li>
+    {% endif %}
+  </ul>
+  {% endfor %}
+</section>
+
+{% endfor %}
+{% endblock %}

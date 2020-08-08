@@ -11,8 +11,10 @@ bookings_blueprint = Blueprint("bookings", __name__)
 @bookings_blueprint.route("/bookings")
 def index():
     bookings = booking_repository.select_all()
-    return render_template("/bookings/index.html", bookings=bookings)
-    
+    activities = activity_repository.select_all()
+    members = member_repository.select_all()
+    return render_template("/bookings/index.html", bookings=bookings, activities=activities, members=members)
+
 
 # NEW
 @bookings_blueprint.route("/bookings/new")
@@ -33,4 +35,4 @@ def create_booking():
 
     booking = Booking(member, activity)
     booking_repository.save(booking)
-    return redirect("/activities")
+    return redirect("/bookings")
