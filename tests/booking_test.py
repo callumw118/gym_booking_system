@@ -21,3 +21,6 @@ class TestBooking(unittest.TestCase):
 
     def test_booking_has_time(self):
         self.assertEqual("13:00", self.booking.activity.time)
+
+    def test_booking_has_capacity(self):
+        self.assertEqual(10, self.booking.activity.capacity)
