@@ -3,8 +3,8 @@ from models.activity import Activity
 
 
 def save(activity):
-    sql = "INSERT INTO activities (name, day_of_week, time) VALUES (%s, %s, %s) RETURNING id"
-    values = [activity.name, activity.day_of_week, activity.time]
+    sql = "INSERT INTO activities (name, day_of_week, time, capacity) VALUES (%s, %s, %s, %s) RETURNING id"
+    values = [activity.name, activity.day_of_week, activity.time, activity.capacity]
     results = run_sql(sql, values)
     id = results[0]['id']
     activity.id = id
@@ -21,7 +21,7 @@ def select_all():
     results = run_sql(sql)
 
     for result in results:
-        activity = Activity(result['name'], result['day_of_week'], result['time'], result['id'])
+        activity = Activity(result['name'], result['day_of_week'], result['time'], result['capacity'], result['id'])
         activities.append(activity)
     return activities
 
@@ -30,11 +30,11 @@ def select(id):
     sql = "SELECT * FROM activities WHERE id=%s"
     values = [id]
     result = run_sql(sql, values)[0]
-    activity = Activity(result['name'], result['day_of_week'], result['time'], result['id'])
+    activity = Activity(result['name'], result['day_of_week'], result['time'], result['capacity'], result['id'])
     return activity
 
 
 def update(activity):
-    sql = "UPDATE activities SET (name, day_of_week, time) = (%s, %s, %s) WHERE id = %s"
-    values = [activity.name, activity.day_of_week, activity.time, activity.id]
+    sql = "UPDATE activities SET (name, day_of_week, time, capacity) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [activity.name, activity.day_of_week, activity.time, activity.capacity, activity.id]
     run_sql(sql, values)

@@ -2,6 +2,7 @@
 {% block content %}
 
 <h2>Book Member on Class</h2>
+<a href="/">Home</a>
 <h3>What's on?</h3>
 
 {% for activity in activities %}
@@ -10,6 +11,7 @@
   <h3>{{ activity.name }}</h3>
   <h4>Currently runs on a {{ activity.day_of_week }}</h4>
   <h5>Times: {{ activity.time }}</h5>
+  <h5>Capacity Left: {{ activity.capacity }}</h5>
 </section>
 
 {% endfor %}

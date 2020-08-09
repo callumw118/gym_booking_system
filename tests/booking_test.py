@@ -7,7 +7,7 @@ class TestBooking(unittest.TestCase):
 
     def setUp(self):
         self.member = Member("Callum Wolfe")
-        self.activity = Activity("HIIT (High Intensity Training)", "Monday", "13:00")
+        self.activity = Activity("HIIT (High Intensity Training)", "Monday", "13:00", 10)
         self.booking = Booking(self.member, self.activity)
 
     def test_booking_has_member(self):
@@ -21,3 +21,11 @@ class TestBooking(unittest.TestCase):
 
     def test_booking_has_time(self):
         self.assertEqual("13:00", self.booking.activity.time)
+
+    def test_booking_has_capacity(self):
+        self.assertEqual(10, self.booking.activity.capacity)
+
+    def test_booking_has_1_less_capacity(self):
+        expected = 9
+        self.activity.reduce_capacity_by_1(self.activity.capacity)
+        self.assertEqual(expected, self.activity.capacity)
