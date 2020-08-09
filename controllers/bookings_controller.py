@@ -34,5 +34,6 @@ def create_booking():
     activity = activity_repository.select(activity_id)
 
     booking = Booking(member, activity)
+    booking.activity.capacity -= 1
     booking_repository.save(booking)
     return redirect("/bookings")

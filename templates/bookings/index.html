@@ -17,8 +17,10 @@
     <li>{{ booking.member.full_name }}</li>
     {% endif %}
   </ul>
+  
   {% endfor %}
-  <h5>Space left: {{ activity.capacity }}</h5>
+  <h5>Space left: {{ activity.capacity - 1}}</h5>
+  
 </section>
 
 {% endfor %}
