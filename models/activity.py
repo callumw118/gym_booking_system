@@ -5,3 +5,7 @@ class Activity:
         self.time = time
         self.capacity = capacity
         self.id = id
+
+
+    def reduce_capacity_by_1(self, capacity):
+        self.capacity -= 1
