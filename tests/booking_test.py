@@ -7,7 +7,7 @@ class TestBooking(unittest.TestCase):
 
     def setUp(self):
         self.member = Member("Callum Wolfe")
-        self.activity = Activity("HIIT (High Intensity Training)", "Monday", "13:00")
+        self.activity = Activity("HIIT (High Intensity Training)", "Monday", "13:00", 10)
         self.booking = Booking(self.member, self.activity)
 
     def test_booking_has_member(self):
