@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Update Member Name</h2>
+<h2>Update {{ member.full_name }}</h2>
 <a href="/members">Back to Members</a>
 
 <form action="/members/{{  member.id  }}" method="POST">
