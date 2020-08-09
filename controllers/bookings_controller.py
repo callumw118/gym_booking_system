@@ -39,7 +39,9 @@ def create_booking():
     if booking.activity.capacity >= 1:
         booking_repository.save(booking)
         booking.activity.capacity -= 1
+        # booking.members_booked += 1
         activity_repository.update(booking.activity)
+        # booking_repository.update(booking)
     else:
         print("Class full")
     return redirect("/bookings")

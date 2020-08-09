@@ -26,9 +26,8 @@ activity_2 = Activity("Indoor Cycling", "Monday", "15:00", 20)
 activity_repository.save(activity_2)
 
 booking_1 = Booking(member_1, activity_1)
-# booking_1.activity.capacity -= 1
 booking_repository.save(booking_1)
-activity_repository.update(booking_1.activity)
+booking_repository.update(booking_1)
 
 booking_2 = Booking(member_2, activity_2)
 booking_repository.save(booking_2)
