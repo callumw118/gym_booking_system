@@ -25,7 +25,8 @@ def create_activity():
     name = request.form["name"]
     day_of_week = request.form["day_of_week"]
     time = request.form["time"]
-    new_activity = Activity(name, day_of_week, time)
+    capacity = request.form['capacity']
+    new_activity = Activity(name, day_of_week, time, capacity)
     activity_repository.save(new_activity)
     return redirect("/activities")
 
