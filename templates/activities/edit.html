@@ -11,7 +11,7 @@
 
     <label for="day_of_week">Day of the Week:</label>
     <select name="day_of_week">
-      <option value="" selected disabled hidden>Choose Day</option>
+      <option value="" selected disabled hidden>{{ activity.day_of_week }}</option>
       <option value="Monday">Monday</option>
       <option value="Tuesday">Tuesday</option>
       <option value="Wednesday">Wednesday</option>
@@ -21,8 +21,11 @@
       <option value="Sunday">Sunday</option>
     </select>
 
-    <label for="time">Change Time: </label>
+    <label for="time">Change Time:</label>
     <input type="time" name="time" value="{{  activity.time  }}">
+
+    <label for="capacity">New Capacity:</label>
+    <input type="number" name="capacity" min="1" max="30" value="{{ activity.capacity }}">
 
     <input type="submit" value="Update">
 
