@@ -3,6 +3,7 @@ import repositories.booking_repository as booking_repository
 import repositories.member_repository as member_repository
 import repositories.activity_repository as activity_repository
 from models.booking import Booking
+from datetime import datetime 
 
 bookings_blueprint = Blueprint("bookings", __name__)
 
@@ -34,13 +35,24 @@ def create_booking():
     activity = activity_repository.select(activity_id)
 
     booking = Booking(member, activity)
+
+    datetime_string = activity.time
+    datetime_of_activity = datetime.strptime(datetime_string,'%H:%M').time()
+
+    minimum_time = "09:00"
+    datetime_minimum_time = datetime.strptime(minimum_time,'%H:%M').time()
+
+    maximum_time = "17:00"
+    datetime_maximum_time = datetime.strptime(maximum_time, '%H:%M').time()
+
     # Checks if capacity in class in greater than 1. If so adds member to class and reduces it by 1
     # Won't allow member to be added if the capacity is 0
     if activity.capacity > activity.members_booked:
-        booking_repository.save(booking)
-        # activity.members_booked += 1
-        # activity_repository.update(booking.activity)
-        # booking_repository.update(booking)
+        if member.membership == "Premium":
+            booking_repository.save(booking)
+        if member.membership == "Standard" and datetime_of_activity > datetime_minimum_time and datetime_of_activity < datetime_maximum_time:
+            print(activity.time)
+            booking_repository.save(booking)
     else:
         print("Class full")
     return redirect("/bookings")
