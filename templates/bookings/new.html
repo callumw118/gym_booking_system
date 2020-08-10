@@ -10,7 +10,7 @@
 <section>
   <h3>{{ activity.name }}</h3>
   <h4>Currently runs on a {{ activity.day_of_week }}</h4>
-  <h5>Times: {{ activity.time }}</h5>
+  <h5>Time: {{ activity.time }}</h5>
   <h5>Capacity Left: {{ activity.get_capacity_left(activity.capacity, activity.members_booked) }}</h5>
 </section>
 
@@ -45,7 +45,7 @@
       {% endfor %}
     </select>
 
-    <label for="day_of_week">Day of Week:</label>
+    <!-- <label for="day_of_week">Day of Week:</label>
     <select name="activity_id">
       <option value="" selected disabled hidden>Select Day</option>
       {% for activity in activities %}
@@ -63,7 +63,7 @@
           {{ activity.time }}
         </option>
         {% endfor %}
-    </select>
+    </select> -->
     <input type="submit" value="Add">
   </section>
 
