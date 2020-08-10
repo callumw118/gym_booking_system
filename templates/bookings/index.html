@@ -13,7 +13,7 @@
   <h5>Members booked on this class</h5>
   {% for booking in bookings %}
   <ul>
-    {% if activity.name == booking.activity.name %}
+    {% if activity.name == booking.activity.name and booking.member.status == "Active" %}
     <li>{{ booking.member.full_name }}</li>
     {% endif %}
   </ul>
