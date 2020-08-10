@@ -17,11 +17,12 @@ def delete_all():
 
 def select_all():
     activities = []
-    sql = "SELECT * FROM activities"
+    sql = "SELECT * FROM activities ORDER BY id"
     results = run_sql(sql)
 
     for result in results:
         activity = Activity(result['name'], result['day_of_week'], result['time'], result['capacity'], result['id'])
+        activity.members_booked = bookings(activity)
         activities.append(activity)
     return activities
 
@@ -31,6 +32,7 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
     activity = Activity(result['name'], result['day_of_week'], result['time'], result['capacity'], result['id'])
+    activity.members_booked = bookings(activity)
     return activity
 
 
@@ -38,3 +40,13 @@ def update(activity):
     sql = "UPDATE activities SET (name, day_of_week, time, capacity) = (%s, %s, %s, %s) WHERE id = %s"
     values = [activity.name, activity.day_of_week, activity.time, activity.capacity, activity.id]
     run_sql(sql, values)
+    activity.members_booked = bookings(activity)
+
+
+def bookings(activity):
+    sql = "SELECT COUNT(*) FROM bookings WHERE activity_id = %s"
+    values = [activity.id]
+    result = run_sql(sql, values)[0]
+    
+    return result["count"]
+

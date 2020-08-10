@@ -42,9 +42,3 @@ def select_all():
         booking = Booking(member, activity, row['id'])
         bookings.append(booking)
     return bookings
-
-
-def update(booking):
-    sql = "UPDATE bookings SET (member_id, activity_id) = (%s, %s) WHERE id=%s"
-    values = [booking.member.id, booking.activity.id, booking.id]
-    run_sql(sql, values)

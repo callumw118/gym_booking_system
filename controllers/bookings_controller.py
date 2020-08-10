@@ -36,11 +36,10 @@ def create_booking():
     booking = Booking(member, activity)
     # Checks if capacity in class in greater than 1. If so adds member to class and reduces it by 1
     # Won't allow member to be added if the capacity is 0
-    if booking.activity.capacity >= 1:
+    if activity.capacity > activity.members_booked:
         booking_repository.save(booking)
-        booking.activity.capacity -= 1
-        # booking.members_booked += 1
-        activity_repository.update(booking.activity)
+        # activity.members_booked += 1
+        # activity_repository.update(booking.activity)
         # booking_repository.update(booking)
     else:
         print("Class full")

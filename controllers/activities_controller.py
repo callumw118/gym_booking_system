@@ -48,3 +48,6 @@ def update_activity(id):
     new_activity = Activity(name, day_of_week, time, capacity, id)
     activity_repository.update(new_activity)
     return redirect("/activities")
+
+
+
