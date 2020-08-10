@@ -22,10 +22,16 @@
     <select name="member_id">
       <option value="" selected disabled hidden>Choose Member</option>
       {% for member in members %}
+        {% if member.status != "Active" %}
+        <option value="{{  member.id  }}" hidden>
+          {{  member.full_name  }}
+        </option>
+        {% else %}
         <option value="{{  member.id  }}">
           {{  member.full_name  }}
         </option>
-      {% endfor %}
+        {% endif %}
+      {% endfor %}  
     </select>
 
     <label for="activity">Activity:</label>
