@@ -13,6 +13,9 @@
   <h5>Maximum Capacity: {{ activity.capacity }}</h5>
   
   <a href="/activities/ {{ activity.id }}/edit">Edit Class</a>
+  <form action="/activities/{{ activity.id }}/delete" method="POST">
+    <input type="submit" value="Remove">
+  </form>
 </section>
 
 {% endfor %}

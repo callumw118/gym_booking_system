@@ -50,4 +50,10 @@ def update_activity(id):
     return redirect("/activities")
 
 
+# DELETE
+@activities_blueprint.route("/activities/<id>/delete", methods=["POST"])
+def delete_activity(id):
+    activity_repository.delete(id)
+    return redirect("/activities")
+
 

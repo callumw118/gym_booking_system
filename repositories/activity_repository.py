@@ -15,6 +15,12 @@ def delete_all():
     run_sql(sql)
 
 
+def delete(id):
+    sql = "DELETE FROM activities WHERE id=%s"
+    values = [id]
+    run_sql(sql, values)
+
+
 def select_all():
     activities = []
     sql = "SELECT * FROM activities ORDER BY id"
