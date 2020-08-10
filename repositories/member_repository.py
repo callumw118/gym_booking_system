@@ -21,7 +21,7 @@ def select_all():
     results = run_sql(sql)
 
     for result in results:
-        member = Member(result['full_name'], result['membership'], result['id'])
+        member = Member(result['full_name'], result['membership'], result['status'], result['id'])
         members.append(member)
     return members
 
@@ -30,11 +30,11 @@ def select(id):
     sql = "SELECT * FROM members WHERE id=%s"
     values = [id]
     result = run_sql(sql, values)[0]
-    member = Member(result['full_name'], result['membership'], result['id'])
+    member = Member(result['full_name'], result['membership'], result['status'], result['id'])
     return member
 
 
 def update(member):
     sql = "UPDATE members SET (full_name, membership) = (%s, %s) WHERE id = %s"
-    values = [member.full_name, member.membership, member.id]
+    values = [member.full_name, member.membership, member.status, member.id]
     run_sql(sql, values)
