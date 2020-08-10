@@ -35,6 +35,6 @@ def select(id):
 
 
 def update(member):
-    sql = "UPDATE members SET (full_name, membership) = (%s, %s) WHERE id = %s"
+    sql = "UPDATE members SET (full_name, membership, status) = (%s, %s, %s) WHERE id = %s"
     values = [member.full_name, member.membership, member.status, member.id]
     run_sql(sql, values)
