@@ -33,7 +33,7 @@ def select(id):
 
 def select_all():
     bookings = []
-    sql = "SELECT * FROM bookings"
+    sql = "SELECT * FROM bookings ORDER BY id"
     results = run_sql(sql)
 
     for row in results:

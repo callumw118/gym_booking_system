@@ -8,7 +8,14 @@
     <section>
         <label for="full_name">Name:</label>
         <input type="text" name="full_name" value="{{ member.full_name }}">
-        <input type="submit">
+
+        <label for="membership">Membership Type:</label>
+        <select name="membership">
+            <option value="Premium">Premium</option>
+            <option value="Standard">Standard</option>
+        </select>
+
+        <input type="submit" value="Update">
     </section>
 </form>
 

@@ -17,7 +17,7 @@ def delete_all():
 
 def select_all():
     members = []
-    sql = "SELECT * FROM members"
+    sql = "SELECT * FROM members ORDER BY id"
     results = run_sql(sql)
 
     for result in results:
@@ -35,6 +35,6 @@ def select(id):
 
 
 def update(member):
-    sql = "UPDATE members SET full_name = %s WHERE id = %s"
+    sql = "UPDATE members SET (full_name, membership) = (%s, %s) WHERE id = %s"
     values = [member.full_name, member.membership, member.id]
     run_sql(sql, values)
