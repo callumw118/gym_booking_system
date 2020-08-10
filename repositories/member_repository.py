@@ -3,8 +3,8 @@ from models.member import Member
 
 
 def save(member):
-    sql = 'INSERT INTO members (full_name, membership) VALUES (%s, %s) RETURNING id'
-    values = [member.full_name, member.membership]
+    sql = 'INSERT INTO members (full_name, membership, status) VALUES (%s, %s, %s) RETURNING id'
+    values = [member.full_name, member.membership, member.status]
     results = run_sql(sql, values)
     id = results[0]['id']
     member.id = id
