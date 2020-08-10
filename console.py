@@ -13,10 +13,10 @@ booking_repository.delete_all()
 member_repository.delete_all()
 activity_repository.delete_all()
 
-member_1 = Member("Callum Wolfe")
+member_1 = Member("Callum Wolfe", "Premium")
 member_repository.save(member_1)
 
-member_2 = Member("James Mann")
+member_2 = Member("James Mann", "Standard")
 member_repository.save(member_2)
 
 activity_1 = Activity("HIIT (High Intensity Training)", "Monday", "13:00", 1)
