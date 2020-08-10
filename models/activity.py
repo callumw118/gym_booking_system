@@ -6,11 +6,7 @@ class Activity:
         self.capacity = capacity
         self.id = id
         self.members_booked = members_booked
-
-
-    def reduce_capacity_by_1(self, capacity):
-        self.capacity -= 1
-
+        
     
     def get_capacity_left(self, capacity, members_booked):
         space_left = capacity - members_booked
