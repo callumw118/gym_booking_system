@@ -4,7 +4,8 @@ DROP TABLE IF EXISTS activities;
 
 CREATE TABLE members (
     id SERIAL PRIMARY KEY,
-    full_name VARCHAR(255)
+    full_name VARCHAR(255),
+    membership VARCHAR(255)
 );
 
 CREATE TABLE activities (
