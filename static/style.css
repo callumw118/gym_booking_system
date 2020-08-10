@@ -37,6 +37,7 @@ menu {
     margin: 10px 0;
 }
 
+/* Targets the text in menu-text attribute to be inserted behind each link the menu when user hovers over it */
 .menu-list li a::before {
     content: attr(menu-text);
     position: absolute;
