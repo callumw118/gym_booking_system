@@ -43,6 +43,7 @@ def update(activity):
     activity.members_booked = bookings(activity)
 
 
+# Counts how many times the same activity_id appears in the booking
 def bookings(activity):
     sql = "SELECT COUNT(*) FROM bookings WHERE activity_id = %s"
     values = [activity.id]

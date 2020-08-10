@@ -32,9 +32,16 @@
     <select name="activity_id">
       <option value="" selected disabled hidden>Choose Activity</option>
       {% for activity in activities %}
+      <!-- Hides the activity from the drop down menu if it is full -->
+        {% if activity.members_booked == activity.capacity %}
+        <option value="{{  activity.id  }}" hidden>
+          {{  activity.name  }}
+        </option>
+        {% else %}
         <option value="{{  activity.id  }}">
           {{  activity.name  }}
         </option>
+        {% endif %}
       {% endfor %}
     </select>
 
