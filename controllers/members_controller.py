@@ -23,8 +23,7 @@ def new_member():
 def create_member():
     full_name = request.form["full_name"]
     membership = request.form["membership"]
-    status = request.form["status"]
-    new_member = Member(full_name, membership, status)
+    new_member = Member(full_name, membership)
     member_repository.save(new_member)
     return redirect("/members")
 
