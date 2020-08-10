@@ -36,12 +36,13 @@ def create_booking():
 
     booking = Booking(member, activity)
 
+    # Converts the string activity time to a time
     datetime_string = activity.time
     datetime_of_activity = datetime.strptime(datetime_string,'%H:%M').time()
 
+    # Off-Peak Hours between 09:00 and 17:00, converts them to a time
     minimum_time = "09:00"
     datetime_minimum_time = datetime.strptime(minimum_time,'%H:%M').time()
-
     maximum_time = "17:00"
     datetime_maximum_time = datetime.strptime(maximum_time, '%H:%M').time()
 
@@ -50,6 +51,7 @@ def create_booking():
     if activity.capacity > activity.members_booked:
         if member.membership == "Premium":
             booking_repository.save(booking)
+            # Save standard membership member to booking if the time of the activity is between the off-peak hours
         if member.membership == "Standard" and datetime_of_activity > datetime_minimum_time and datetime_of_activity < datetime_maximum_time:
             print(activity.time)
             booking_repository.save(booking)
