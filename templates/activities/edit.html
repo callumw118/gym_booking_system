@@ -7,30 +7,31 @@
 </header>
 
 <form action="/activities/{{ activity.id }}" method="POST">
-  <section>
-    <label for="name">Edit Class Name:</label>
-    <input type="text" name="name" value="{{ activity.name }}">
+  <section class="container">
+    <main>
+      <label for="name">Edit Class Name</label>
+      <input type="text" name="name" value="{{ activity.name }}">
 
-    <label for="day_of_week">Day of the Week:</label>
-    <select name="day_of_week">
-      <option value="" selected disabled hidden>{{ activity.day_of_week }}</option>
-      <option value="Monday">Monday</option>
-      <option value="Tuesday">Tuesday</option>
-      <option value="Wednesday">Wednesday</option>
-      <option value="Thursday">Thursday</option>
-      <option value="Friday">Friday</option>
-      <option value="Saturday">Saturday</option>
-      <option value="Sunday">Sunday</option>
-    </select>
+      <label for="day_of_week">Day of the Week</label>
+      <select name="day_of_week">
+        <option value="" selected disabled hidden>{{ activity.day_of_week }}</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+      </select>
 
-    <label for="time">Change Time:</label>
-    <input type="time" name="time" value="{{  activity.time  }}">
+      <label for="time">Change Time</label>
+      <input type="time" name="time" value="{{  activity.time  }}">
 
-    <label for="capacity">New Capacity:</label>
-    <input type="number" name="capacity" min="1" max="30" value="{{ activity.capacity }}">
+      <label for="capacity">New Capacity</label>
+      <input type="number" name="capacity" min="1" max="30" value="{{ activity.capacity }}">
 
-    <input type="submit" value="Update">
-
+      <input class="button" type="submit" value="Update">
+    </main>
   </section>
 </form>
 

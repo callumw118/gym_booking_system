@@ -7,7 +7,7 @@
 
 .container {
     background-color: white;
-    color: black;
+    color: #404040;
     height: 100vh;
 }
 
@@ -46,18 +46,6 @@ main select {
     width: 150px;
     height: 35px;
 }
-
-/* main input[type=submit] {
-    padding: 5px 15px; 
-    background: #ccc; 
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-main input[type=submit]:hover {
-    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
-} */
 
 main input[type=number], [type=time] {
     padding: 5px;

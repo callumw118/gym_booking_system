@@ -2,18 +2,6 @@
     text-align: center;
     padding-top: 20px;
 }
-/* 
-.booking-form input[type=submit] {
-    padding: 5px 15px; 
-    background: #ccc; 
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.booking-form input[type=submit]:hover {
-    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
-} */
 
 .button {
     padding: 5px 15px; 
@@ -59,5 +47,10 @@
 h3 {
     text-align: center;
     padding: 20px 0 5px;
+}
+
+.activity-card a {
+    color: #404040;
+    text-decoration: underline overline;
 }
 
