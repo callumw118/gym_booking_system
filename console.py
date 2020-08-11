@@ -19,6 +19,9 @@ member_repository.save(member_1)
 member_2 = Member("James Mann", "Standard")
 member_repository.save(member_2)
 
+member_3 = Member("Grant Hamilton", "Premium")
+member_repository.save(member_3)
+
 activity_1 = Activity("BoxFit", "Monday", "13:00", 10)
 activity_repository.save(activity_1)
 
