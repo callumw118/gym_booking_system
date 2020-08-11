@@ -28,10 +28,4 @@ activity_repository.save(activity_2)
 activity_3 = Activity("Functional Strength", "Tuesday", "18:00", 12)
 activity_repository.save(activity_3)
 
-booking_1 = Booking(member_1, activity_1)
-booking_repository.save(booking_1)
-
-booking_2 = Booking(member_2, activity_1)
-booking_repository.save(booking_2)
-
 pdb.set_trace()
