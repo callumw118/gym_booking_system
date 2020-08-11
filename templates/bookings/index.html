@@ -6,24 +6,28 @@
   <h2>All Bookings</h2>
 </header>
 
-{% for activity in activities %}
+<section class="container">
+  <section class="activities-container">
+    {% for activity in activities %}
+    <section class="activity-card">
+      <!-- Displays members booked on particular course -->
+        <h3>{{ activity.name }}</h3>
+        <img
+        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/impressive-workout-royalty-free-image-898430526-1544720491.jpg"
+        alt="fitness-class">
+        <p>On {{ activity.day_of_week  }} at {{ activity.time }} </p>
+        <h5>Members booked on this class</h5>
+        {% for booking in bookings %}
+        <ul>
+          {% if activity.name == booking.activity.name and booking.member.status == "Active" %}
+          <li>{{ booking.member.full_name }}</li>
+          {% endif %}
+        </ul>
 
-<!-- Displays members booked on particular course -->
-<section>
-  <h3>{{ activity.name }}</h3>
-  <p>On {{ activity.day_of_week  }} at {{ activity.time }} </p>
-  <h5>Members booked on this class</h5>
-  {% for booking in bookings %}
-  <ul>
-    {% if activity.name == booking.activity.name and booking.member.status == "Active" %}
-    <li>{{ booking.member.full_name }}</li>
-    {% endif %}
-  </ul>
-
-  {% endfor %}
-  <h5>Space left: {{ activity.get_capacity_left(activity.capacity, activity.members_booked) }}</h5>
-  
+        {% endfor %}
+        <h5>Space left: {{ activity.get_capacity_left(activity.capacity, activity.members_booked) }}</h5>
+    </section>
+    {% endfor %}
+  </section>
 </section>
-
-{% endfor %}
 {% endblock %}

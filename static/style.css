@@ -21,6 +21,10 @@ a {
     color: white;
 }
 
+ul {
+    list-style: none;
+}
+
 input, select {
     max-width: 200px;
 }

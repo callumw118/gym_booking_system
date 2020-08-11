@@ -49,11 +49,10 @@ def create_booking():
     # Checks if capacity in class in greater than 1. If so adds member to class and reduces it by 1
     # Won't allow member to be added if the capacity is 0
     if activity.capacity > activity.members_booked:
-        if member.membership == "Premium" and member.id != booking.member.id:
+        if member.membership == "Premium":
             booking_repository.save(booking)
             # Save standard membership member to booking if the time of the activity is between the off-peak hours
         if member.membership == "Standard" and datetime_of_activity > datetime_minimum_time and datetime_of_activity < datetime_maximum_time and member.id != booking.member.id:
-            print(activity.time)
             booking_repository.save(booking)
     else:
         print("Class full")
