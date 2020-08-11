@@ -4,20 +4,26 @@
 <h1>Members</h1>
 <a href="/">Home</a>
 
+<section class="members">
 {% for member in members %}
 
-<section class="members">
+
   <div class="card">
     <div class="top">
       <h3>{{ member.full_name }}</h3>
+      <img src="https://media-exp1.licdn.com/dms/image/C5603AQH6MWuDSTqAqQ/profile-displayphoto-shrink_400_400/0?e=1602720000&v=beta&t=1yD9l_kba0IRV8AmC754G3wkArvZOGWPMsb4w4RUu7k" alt="avatar">
+    </div>
       <div class="bottom">
-        <h4>{{ member.membership }} Member</h4>
-        <h4>{{ member.status }}</h4>
-        <a href="/members/ {{ member.id }}/edit">Edit Member</a>
+        <div class="status">
+         <h4>{{ member.membership }} Member</h4>
+         <h4>{{ member.status }}</h4>
+         <a href="/members/ {{ member.id }}/edit">Edit Member</a>
+      </div>
       </div>
     </div>
 </div>
-</section>
+
 
 {% endfor %}
+</section>
 {% endblock %}

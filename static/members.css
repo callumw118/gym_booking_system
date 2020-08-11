@@ -4,4 +4,57 @@
     width: 70%;
     padding: 30px;
     color: #2196f3;
+    display: flex;
 }
+
+.card {
+    position: relative;
+    border-radius: 25px;
+    background-color: #81ecec;
+    height: 200px;
+    width: 70%;
+    text-align: left;
+    padding: 25px 15px;
+    margin: 20px 50px;
+}
+
+.top {
+    border-radius: 25px 25px 0 0;
+    background: #00cec9;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+.top h3 {
+    font-size: 1.5em;
+    color: #2d3436;
+    margin: 10% 20px 0;
+    display: flex;
+    flex: 1;
+}
+
+.top img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border: 7px solid #fff;
+    margin: 30px 20px 0 0;
+}
+
+.bottom {
+    margin: 100px;
+}
+
+.status {
+    margin: 10px -100px;
+    color: #1a7e76;
+}
+
+
+
+
+
