@@ -10,9 +10,23 @@ header {
     display: inline-block;
 }
 
+/* section {
+    background-color: white;
+    margin: auto;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    color: black;
+} */
+
 a {
     text-decoration: none;
     color: white;
+}
+
+input, select {
+    max-width: 200px;
 }
 
 body {

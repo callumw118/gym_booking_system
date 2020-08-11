@@ -7,17 +7,19 @@
 </header>
 
 <form action="/members" method="POST">
-  <section>
-    <label for="full_name"> Name:</label>
-    <input type="text" name="full_name">
+  <section class="add-member-container">
+    <main>
+      <label for="full_name"> Name</label>
+      <input type="text" name="full_name" placeholder="Enter Member Name" autocomplete="off">
 
-    <label for="membership">Membership Type:</label>
-    <select name="membership">
-      <option value="Premium">Premium</option>
-      <option value="Standard">Standard</option>
-    </select>
+      <label for="membership">Membership Type</label>
+      <select name="membership">
+        <option value="Premium">Premium</option>
+        <option value="Standard">Standard</option>
+      </select>
         
-    <input type="submit">
+      <input type="submit">
+  </main>
   </section>
 </form>
 
