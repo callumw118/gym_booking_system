@@ -21,7 +21,6 @@
         <li>{{ booking.member.full_name }}</li>
         {% endif %}
       </ul>
-
       {% endfor %}
       <h5>Space left: {{ activity.get_capacity_left(activity.capacity, activity.members_booked) }}</h5>
     </section>
