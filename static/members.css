@@ -40,6 +40,10 @@
     flex: 1;
 }
 
+.member-name {
+    text-align: left;
+}
+
 .top img {
     border-radius: 50%;
     width: 120px;

@@ -7,33 +7,33 @@
 </header>
 
 <section class="members">
-{% for member in members %}
+  {% for member in members %}
 
 
   <div class="card">
     <div class="top">
-      <h3>{{ member.full_name }}</h3>
-      <img src="https://i.pinimg.com/236x/54/a4/00/54a4008daad4565a9b5db1b94e59c74c.jpg" alt="avatar">
+      <h3 class="member-name">{{ member.full_name }}</h3>
+      <img src="/static/images/cat.jpg" alt="avatar">
     </div>
-      <div class="bottom">
-        <div class="status">
-          {% if member.membership == "Premium" %}
-          <h4 style="color: #cdb30c">{{ member.membership }} Member</h4>
-          {% else %}
-          <h4 style="color: #404040">{{ member.membership }} Member</h4>
-          {% endif %}
-          {% if member.status == "Active" %}
-          <h4 style="color:#158467">{{ member.status }}</h4>
-          {% else %}
-          <h4 style="color:#810000">{{ member.status }}</h4>
-          {% endif %}
-         <a href="/members/ {{ member.id }}/edit">Edit Member</a>
-      </div>
+    <div class="bottom">
+      <div class="status">
+        {% if member.membership == "Premium" %}
+        <h4 style="color: #cdb30c">{{ member.membership }} Member</h4>
+        {% else %}
+        <h4 style="color: #404040">{{ member.membership }} Member</h4>
+        {% endif %}
+        {% if member.status == "Active" %}
+        <h4 style="color:#158467">{{ member.status }}</h4>
+        {% else %}
+        <h4 style="color:#810000">{{ member.status }}</h4>
+        {% endif %}
+        <a href="/members/ {{ member.id }}/edit">Edit Member</a>
       </div>
     </div>
-</div>
+  </div>
+  </div>
 
 
-{% endfor %}
+  {% endfor %}
 </section>
 {% endblock %}

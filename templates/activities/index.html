@@ -10,10 +10,8 @@
   <section class="activities-container">
     {% for activity in activities %}
     <section class="activity-card">
-      <h3>{{ activity.name }}</h3>
-      <img
-        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/impressive-workout-royalty-free-image-898430526-1544720491.jpg"
-        alt="fitness-class">
+      <h3 class="name">{{ activity.name }}</h3>
+      <img src="/static/images/class.jpg" alt="fitness-class">
       <h4>Currently runs on a {{ activity.day_of_week }}</h4>
       <h5>Time: {{ activity.time }}</h5>
       <h5>Maximum Capacity: {{ activity.capacity }}</h5>
