@@ -5,20 +5,16 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.container {
+    background-color: white;
+    color: black;
+    height: 100vh;
+}
+
 header {
     padding: 10px;
     display: inline-block;
 }
-
-/* section {
-    background-color: white;
-    margin: auto;
-    width: 100%;
-    padding: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    color: black;
-} */
 
 a {
     text-decoration: none;
@@ -27,6 +23,44 @@ a {
 
 input, select {
     max-width: 200px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    font-size: 2em;
+}
+
+main label, input, select {
+    margin: 10px;
+}
+
+main input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+
+main select {
+    width: 150px;
+    height: 35px;
+}
+
+main input[type=submit] {
+    padding: 5px 15px; 
+    background: #ccc; 
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+main input[type=submit]:hover {
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+}
+
+main input[type=number], [type=time] {
+    padding: 5px;
 }
 
 body {
