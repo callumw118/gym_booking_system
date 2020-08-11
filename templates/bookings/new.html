@@ -5,25 +5,14 @@
   <a href="/">Home</a>
   <h2>Book Member on Class</h2>
 </header>
-<h3>What's on?</h3>
 
-{% for activity in activities %}
-
-<section>
-  <h3>{{ activity.name }}</h3>
-  <h4>Currently runs on a {{ activity.day_of_week }}</h4>
-  <h5>Time: {{ activity.time }}</h5>
-  <h5>Capacity Left: {{ activity.get_capacity_left(activity.capacity, activity.members_booked) }}</h5>
-</section>
-
-{% endfor %}
-
-<form action="/bookings" method="POST">
-  <section>
-    <label for="member">Member:</label>
-    <select name="member_id">
-      <option value="" selected disabled hidden>Choose Member</option>
-      {% for member in members %}
+<section class="container">
+  <form action="/bookings" method="POST">
+    <section class="booking-form">
+      <label for="member">Member:</label>
+      <select name="member_id">
+        <option value="" selected disabled hidden>Choose Member</option>
+        {% for member in members %}
         {% if member.status != "Active" %}
         <option value="{{  member.id  }}" hidden>
           {{  member.full_name  }}
@@ -33,14 +22,14 @@
           {{  member.full_name  }}
         </option>
         {% endif %}
-      {% endfor %}  
-    </select>
+        {% endfor %}
+      </select>
 
-    <label for="activity">Activity:</label>
-    <select name="activity_id">
-      <option value="" selected disabled hidden>Choose Activity</option>
-      {% for activity in activities %}
-      <!-- Hides the activity from the drop down menu if it is full -->
+      <label for="activity">Activity:</label>
+      <select name="activity_id">
+        <option value="" selected disabled hidden>Choose Activity</option>
+        {% for activity in activities %}
+        <!-- Hides the activity from the drop down menu if it is full -->
         {% if activity.members_booked == activity.capacity %}
         <option value="{{  activity.id  }}" hidden>
           {{  activity.name  }}
@@ -50,31 +39,27 @@
           {{  activity.name  }}
         </option>
         {% endif %}
-      {% endfor %}
-    </select>
-
-    <!-- <label for="day_of_week">Day of Week:</label>
-    <select name="activity_id">
-      <option value="" selected disabled hidden>Select Day</option>
-      {% for activity in activities %}
-        <option value="{{ activity.id }}">
-          {{ activity.day_of_week }}
-        </option>
-      {% endfor %}
-    </select>
-
-    <label for="time">Time:</label>
-    <select name="activity_id">
-      <option value="" selected disabled hidden>Select Time</option>
-      {% for activity in activities %}
-        <option value="{{ activity.id }}">
-          {{ activity.time }}
-        </option>
         {% endfor %}
-    </select> -->
-    <input type="submit" value="Add">
-  </section>
+      </select>
+      <input type="submit" value="Add">
+    </section>
+  </form>
 
-</form>
+  <h3>Classes Available</h3>
+
+  <section class="activities-container">
+    {% for activity in activities %}
+    <section class="activity-card">
+      <h3>{{ activity.name }}</h3>
+      <img
+        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/impressive-workout-royalty-free-image-898430526-1544720491.jpg"
+        alt="fitness-class">
+      <h4>Currently runs on a {{ activity.day_of_week }}</h4>
+      <h5>Time: {{ activity.time }}</h5>
+      <h5>Capacity Left: {{ activity.get_capacity_left(activity.capacity, activity.members_booked) }}</h5>
+    </section>
+    {% endfor %}
+  </section>
+</section>
 
 {% endblock %}

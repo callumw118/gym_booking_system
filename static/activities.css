@@ -1,0 +1,50 @@
+.booking-form {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.booking-form input[type=submit] {
+    padding: 5px 15px; 
+    background: #ccc; 
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.booking-form input[type=submit]:hover {
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+}
+
+.activities-container {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 100%;
+}
+
+.activity-card {
+    text-align: center;
+    margin: 30px 20px;
+    border: 1px solid grey;
+    border-radius: 3%;
+    padding: 30px;
+    max-width: 38%;
+    align-items: flex-start;
+    color: #404040;
+}
+
+.activity-card img {
+    height: 180px;
+    width: 320px;
+}
+
+.activity-card h3, img, h4, h5 {
+    margin-bottom: 15px;
+}
+
+h3 {
+    text-align: center;
+    padding: 20px 0 5px;
+}
+
