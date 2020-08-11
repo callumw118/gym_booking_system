@@ -12,13 +12,13 @@
 .card {
     position: relative;
     border-radius: 25px;
-    background-color: lightgrey;
+    background-color: #f4f6ff;
     height: 200px;
     width: 28%;
     text-align: left;
     padding: 25px 15px;
     margin: 20px 30px;
-    
+    /* border: 1px solid black; */
 }
 
 .top {

@@ -17,11 +17,15 @@
     </div>
       <div class="bottom">
         <div class="status">
-          <h4>{{ member.membership }} Member</h4>
-          {% if member.status == "Active" %}
-          <h4 style="color:green">{{ member.status }}</h4>
+          {% if member.membership == "Premium" %}
+          <h4 style="color: #cdb30c">{{ member.membership }} Member</h4>
           {% else %}
-          <h4 style="color:red">{{ member.status }}</h4>
+          <h4 style="color: #404040">{{ member.membership }} Member</h4>
+          {% endif %}
+          {% if member.status == "Active" %}
+          <h4 style="color:#158467">{{ member.status }}</h4>
+          {% else %}
+          <h4 style="color:#810000">{{ member.status }}</h4>
           {% endif %}
          <a href="/members/ {{ member.id }}/edit">Edit Member</a>
       </div>
