@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Edit Class Details for {{ activity.name }}</h2>
-<a href="/activities">Back to Classes</a>
+<header>
+  <a href="/activities">Back to Classes</a>
+  <h2>Edit Class Details for {{ activity.name }}</h2>
+</header>
 
 <form action="/activities/{{ activity.id }}" method="POST">
   <section>
