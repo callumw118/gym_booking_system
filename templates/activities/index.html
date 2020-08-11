@@ -6,19 +6,25 @@
   <h1>Classes</h1>
 </header>
 
-{% for activity in activities %}
+<section class="container">
+  <section class="activities-container">
+    {% for activity in activities %}
+    <section class="activity-card">
+      <h3>{{ activity.name }}</h3>
+      <img
+        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/impressive-workout-royalty-free-image-898430526-1544720491.jpg"
+        alt="fitness-class">
+      <h4>Currently runs on a {{ activity.day_of_week }}</h4>
+      <h5>Time: {{ activity.time }}</h5>
+      <h5>Maximum Capacity: {{ activity.capacity }}</h5>
 
-<section>
-  <h3>{{ activity.name }}</h3>
-  <h4>Currently runs on a {{ activity.day_of_week }}</h4>
-  <h5>Time: {{ activity.time }}</h5>
-  <h5>Maximum Capacity: {{ activity.capacity }}</h5>
-  
-  <a href="/activities/ {{ activity.id }}/edit">Edit Class</a>
-  <form action="/activities/{{ activity.id }}/delete" method="POST">
-    <input type="submit" value="Remove">
-  </form>
+      <a href="/activities/ {{ activity.id }}/edit">Edit Class</a>
+      <form action="/activities/{{ activity.id }}/delete" method="POST">
+        <input class="button" type="submit" value="Remove">
+      </form>
+    </section>
+
+    {% endfor %}
+  </section>
 </section>
-
-{% endfor %}
 {% endblock %}
