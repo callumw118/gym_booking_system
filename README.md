@@ -4,9 +4,9 @@ This is a system for a gym to help them manage memberships, and register members
 The project does not include any Javascript. Feedback always welcome.
 
 ## Usage
-Fork this project, or download it as a zip file then import into your IDE of choice.
+Fork this project, or download it as a zip file then import into your IDE of choice. You will need Python and Flask to run this.
 
-#### Install Flask 
+#### Install Flask using pip
 ```
 pip install -U Flask
 ```
