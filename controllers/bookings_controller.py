@@ -52,9 +52,9 @@ def create_booking():
         if member.membership == "Premium":
             booking_repository.save(booking)
             # Save standard membership member to booking if the time of the activity is between the off-peak hours
-        if member.membership == "Standard" and datetime_of_activity > datetime_minimum_time and datetime_of_activity < datetime_maximum_time and member.id != booking.member.id:
+        if member.membership == "Standard" and datetime_of_activity > datetime_minimum_time and datetime_of_activity < datetime_maximum_time:
             booking_repository.save(booking)
     else:
         print("Class full")
-    return redirect("/bookings")
+    return redirect("/bookings/new")
    
