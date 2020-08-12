@@ -30,6 +30,7 @@ python3 console.py
 ```
 flask run
 ```
+#### App will run on localhost:5000
 
 
 
