@@ -6,27 +6,27 @@ The project does not include any Javascript. Feedback always welcome.
 ## Usage
 Fork this project, or download it as a zip file then import into your IDE of choice.
 
-Install Flask 
+#### Install Flask 
 ```
 pip install -U Flask
 ```
 
-Create Gym Database
+#### Create Gym Database
 ```
 createdb gym
 ```
 
-Run Gym SQL File
+#### Run Gym SQL File
 ```
 psql -d gym -f db/gym.sql
 ```
 
-Run Console File
+#### Run Console File
 ```
 python3 console.py
 ```
 
-Run Flask
+#### Run Flask
 ```
 flask run
 ```
