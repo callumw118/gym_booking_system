@@ -1,11 +1,36 @@
 # gym_booking_system
 
-This is a system for a gym to store members and to book them on gym classes. The project uses the Python Flask framework and PostgreSQL for the database.
+This is a system for a gym to help them manage memberships, and register members for classes. The project uses the Python Flask framework and PostgreSQL for the database.
 The project does not include any Javascript. Feedback always welcome.
 
 ## Usage
+Fork this project, or download it as a zip file then import into your IDE of choice.
+
 Install Flask 
 ```
 pip install -U Flask
 ```
+
+Create Gym Database
+```
+createdb gym
+```
+
+Run Gym SQL File
+```
+psql -d gym -f db/gym.sql
+```
+
+Run Console File
+```
+python3 console.py
+```
+
+Run Flask
+```
+flask run
+```
+
+
+
 
