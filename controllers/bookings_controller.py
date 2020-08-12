@@ -46,7 +46,7 @@ def create_booking():
     maximum_time = "17:00"
     datetime_maximum_time = datetime.strptime(maximum_time, '%H:%M').time()
 
-    # Checks if capacity in class in greater than 1. If so adds member to class and reduces it by 1
+    # Checks if capacity in class in greater than 1, if so adds member to class an
     # Won't allow member to be added if the capacity is 0
     if activity.capacity > activity.members_booked:
         if member.membership == "Premium":
