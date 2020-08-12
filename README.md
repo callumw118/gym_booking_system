@@ -5,5 +5,7 @@ The project does not include any Javascript. Feedback always welcome.
 
 ## Usage
 Install Flask 
-```pip install -U Flask```
+```
+pip install -U Flask
+```
 
